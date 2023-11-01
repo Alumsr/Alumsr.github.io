@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en sc">
-    <head>
-        <meta charset="UTF-8">
-        <mata name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Notes & Collections for RM-RIC</title>
-    </head>
-    <body>
-        <header>
-            <h1>Notes & Collections for RM-RIC</h1>
-            <h2>By zh</h2>
-            <div id="content"></div>
-            <script src="hello_script.js"></script>
-        </header>
-    </body>
+<html>
+<head>
+  <title>Markdown Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h1>Markdown Files</h1>
+      <ul id="file-list"></ul>
+    </div>
+    <div class="content">
+      <div id="markdown-content"></div>
+    </div>
+  </div>
 
+  <script src="script.js"></script>
+</body>
 </html>
