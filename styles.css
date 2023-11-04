@@ -1,14 +1,56 @@
-body {
-  font-family: 'Ubuntu Mono', monospace;
-  color: rgb(196, 196, 196);
-  letter-spacing: 1px;
-  text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
-  position: relative;
-  background-color: black;
+
+html{
+    font-size: 110%;
+    font-family: system-ui;
 }
 
-a {
-  color: rgb(196, 196, 196);
-  text-decoration: none;
-  text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+body{
+    background-color: rgba(70, 172, 255, 0.253);
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(109, 162, 255, 0.253);
+    box-shadow: 0px 4px 10px 0px rgba(64, 64, 64, 0.27);
+
+}
+
+nav a{
+    padding: 0.6em 2em;
+    margin: 0 0.3em;
+    color: black;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 200ms ease;
+    text-decoration:none;
+}
+
+nav a:hover{
+    border-radius: 0.2em;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.3);
+}
+
+.content{
+    padding: 0 5em;
+    letter-spacing: 0.05em;
+    line-height: 1.6em;
+}
+
+.title{
+    text-align: left;
+    padding: 0.3em 1.5em;
+    border: 9px inset #7effff42;
+    border-left: 0px outset #ff6550;
+    font-size: 2rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background-color: rgba(86, 255, 255, 0.066);
+}
+
+.block{
+    display: block;
+    margin: 2em 0;
 }
