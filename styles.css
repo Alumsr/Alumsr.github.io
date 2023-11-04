@@ -1,56 +1,136 @@
 
 html{
     font-size: 110%;
-    font-family: system-ui;
+    font-family: "coca", system-ui;
+    color: #261700;
 }
 
 body{
-    background-color: rgba(70, 172, 255, 0.253);
+    background-color: rgba(155, 134, 122, 0.253);
     margin: 0;
 }
 
 nav{
     display: flex;
     justify-content: space-around;
-    background-color: rgba(109, 162, 255, 0.253);
+    background-color: rgb(245, 224, 159);
     box-shadow: 0px 4px 10px 0px rgba(64, 64, 64, 0.27);
+    position:sticky;
+    top:0;
+    z-index: 999;
 
 }
 
 nav a{
     padding: 0.6em 2em;
     margin: 0 0.3em;
-    color: black;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0px 2px rgb(90, 60, 0);
     border-radius: 0;
-    background-color: rgba(0, 0, 0, 0);
     transition: all 200ms ease;
     text-decoration:none;
+    color: rgb(92, 55, 0);
 }
 
 nav a:hover{
-    border-radius: 0.2em;
+    border-radius: 1em;
     background-color: rgba(0, 0, 0, 0.05);
-    text-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.3);
+}
+
+nav img{
+    transform: translateY(24%) translateX(5%);
+    transition: all 500ms ease;
+}
+
+
+.slash{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: none;
 }
 
 .content{
-    padding: 0 5em;
-    letter-spacing: 0.05em;
-    line-height: 1.6em;
-}
-
-.title{
     text-align: left;
-    padding: 0.3em 1.5em;
-    border: 9px inset #7effff42;
-    border-left: 0px outset #ff6550;
-    font-size: 2rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    background-color: rgba(86, 255, 255, 0.066);
+    padding: 0 5em;
+    margin-top: 2em;
+    line-height: 135%;
+    word-spacing: 100%;
+}
+.content h1{
+    text-shadow: 0.05em 0.05em 1px rgba(0, 0, 0, 0.3);
+    transform: translateX(-0.5em);
 }
 
-.block{
-    display: block;
-    margin: 2em 0;
+.note{
+    padding: 0.5em 1.5em;
+    margin-left: 2em;
+    margin-top: 2em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 199, 86, 0.171);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.158);
+    position:static;
+    display: inline-block;
+    max-width: 600px;
+}
+
+.navText{
+    display: inline-block;
+}
+
+.slash{
+    display: inline-block;
+    opacity: 0;
+    animation: dimIn 100ms forwards ease;
+}
+
+@keyframes dimIn {
+    to{
+        opacity: 100%;
+    }
+}
+
+@font-face {
+    font-family: "coca";
+    src: url(fonts/可口可乐在乎体.ttf);
+}
+
+@font-face {
+    font-family: "gsht";
+    src: url(fonts/sarasa-semibold.ttc);
+}
+
+
+@media (max-width: 600px) {
+    nav{
+        flex-direction: column;
+        align-items: center;
+        position:fixed;
+        top:auto;
+        right:0%;
+        bottom: 10%;
+        z-index: 4;
+        transform: translateX(50%) translateY(10%) scaleY(80%);
+        border-radius: 1rem;
+    }
+    nav a{
+        margin: 0;
+    }
+    nav img{
+        transform: translateX(-110%) translateY(5%) scaleY(125%);
+        opacity: 80%;
+    }
+
+    .slash, .navText{
+        display: none;
+    }
+
+    .note{
+        border: 0px inset #7effff42;
+    }
+    
+    
+}
+
+@media (min-width: 600px) {
+    .slash{
+        animation: dimIn 800ms forwards ease;
+    }
 }
