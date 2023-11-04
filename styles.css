@@ -1,20 +1,20 @@
 
 html{
     font-size: 110%;
-    font-family: "coca", system-ui;
-    color: #261700;
+    font-family: system-ui;
+    color: #fff5e6;
 }
 
 body{
-    background-color: rgba(155, 134, 122, 0.253);
+    background-color: rgb(18, 17, 36);
     margin: 0;
 }
 
 nav{
     display: flex;
     justify-content: space-around;
-    background-color: rgb(245, 224, 159);
-    box-shadow: 0px 4px 10px 0px rgba(64, 64, 64, 0.27);
+    background-color: rgb(3, 126, 198);
+    box-shadow: 0px 3px 10px 0px rgba(0, 219, 219, 0.27);
     position:sticky;
     top:0;
     z-index: 999;
@@ -24,11 +24,12 @@ nav{
 nav a{
     padding: 0.6em 2em;
     margin: 0 0.3em;
-    text-shadow: 0 0px 2px rgb(90, 60, 0);
     border-radius: 0;
     transition: all 200ms ease;
     text-decoration:none;
-    color: rgb(92, 55, 0);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: bolder;
 }
 
 nav a:hover{
@@ -51,12 +52,15 @@ nav img{
     text-align: left;
     padding: 0 5em;
     margin-top: 2em;
-    line-height: 135%;
+    line-height: 150%;
     word-spacing: 100%;
+    text-wrap:pretty;
 }
 .content h1{
-    text-shadow: 0.01em 0.01em 0.03em rgba(0, 0, 0, 0.3);
+    text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.5);
     transform: translateX(-1em);
+    line-height: normal;
+    font-size: 1.5em;
 }
 
 .note{
@@ -64,7 +68,7 @@ nav img{
     margin-left: 2em;
     margin-top: 2em;
     /* text-shadow: 0 0px 2px rgba(0, 0, 0, 0.3); */
-    background-color: rgba(255, 199, 86, 0.171);
+    background-color: rgba(86, 165, 255, 0.171);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.158);
     position:static;
     display: inline-block;
