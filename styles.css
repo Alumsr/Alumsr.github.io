@@ -9,48 +9,59 @@ body{
     margin: 0;
 }
 
+
 nav{
     display: flex;
     justify-content: space-around;
-    background-color: rgb(3, 126, 198);
-    box-shadow: 0px 3px 10px 0px rgba(0, 219, 219, 0.27);
-    position:sticky;
-    top:0;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(48, 210, 255, 0.306);
+    box-shadow: 0px 2px 3px 2px rgba(0, 61, 57, 0.628);
+    position:fixed;
+    top:1em;
+    border-radius: 999em;
     z-index: 999;
+    opacity: 0.85;
 
 }
-
 nav a{
-    padding: 0.6em 2em;
-    margin: 0 0.3em;
-    border-radius: 0;
-    transition: all 200ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 2em;
+    transition: all 400ms ease;
     text-decoration:none;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     font-weight: bolder;
+    border-radius: 0;
+    overflow: hidden;
 }
-
-nav a:hover{
-    border-radius: 1em;
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-nav img{
-    transform: translateY(24%) translateX(5%);
+nav img, .slash, .navText{
     transition: all 500ms ease;
+    filter: invert(1);
+    opacity: 0.85;
+    text-shadow: 0 2px 0px rgb(255, 255, 255);
 }
 
-
+.out_nav{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4em;
+}
 .slash{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-shadow: none;
+}
+.navText{
+    display: inline-block;
 }
 .content_box{
     display:flex;
     flex-direction: column;
     align-items: center;
-
+    flex-wrap: nowrap;
+    border: 1px dashed rgb(255, 255, 255);
 }
 .content{
     text-align: left;
@@ -58,32 +69,39 @@ nav img{
     margin-top: 2em;
     line-height: 1.8em;
     word-spacing: 0.25em;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     text-wrap:pretty;
-    max-width: 768px;
+    max-width: 800px;
 }
 .content h1{
     text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.5);
     transform: translateX(-1em);
     line-height: normal;
     font-size: 1.5em;
+    text-transform: capitalize;
 }
 
 .note{
     padding: 0.5em 1.5em;
-    margin-left: 2em;
-    margin-top: 2em;
-    /* text-shadow: 0 0px 2px rgba(0, 0, 0, 0.3); */
-    background-color: rgba(86, 165, 255, 0.171);
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.158);
-    position:static;
+    margin:2em;
+    background-color: rgba(0, 119, 255, 0.171);
     display: inline-block;
     max-width: 600px;
+    transition: all 200ms ease;
+    border-radius: 999em;
+    box-shadow: none;
+}
+.note:hover{
+    box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+    transform: scale(1.01);
+}
+.note:active{
+    box-shadow: none;
+    transform: scale(1);
+    background-color: rgba(0, 36, 144, 0.224);
 }
 
-.navText{
-    display: inline-block;
-}
+
 
 .slash{
     display: inline-block;
@@ -108,7 +126,7 @@ nav img{
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     nav{
         flex-direction: column;
         align-items: center;
@@ -118,7 +136,7 @@ nav img{
         bottom: 10%;
         z-index: 4;
         transform: translateX(50%) translateY(10%) scaleY(80%);
-        border-radius: 1rem;
+        border-radius: 0.5em;
     }
     nav a{
         margin: 0;
@@ -131,16 +149,44 @@ nav img{
     .slash, .navText{
         display: none;
     }
+    .out_nav{
+        position: absolute;
+    }
 
     .note{
         border: 0px inset #7effff42;
+        display: block;
     }
     
     
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     .slash{
         animation: dimIn 800ms forwards ease;
+    }
+    nav:hover{
+        opacity: 1;
+        transform: scale(1.05);
+        transition: all 600ms ease;
+    }
+    nav:not(:hover){
+        transition: all 800ms ease;
+    }
+    nav:active{
+        transform: scale(1.01);
+    }
+    nav a:hover{
+        padding: 0.5em 1em;
+        background-color: rgba(0, 255, 255, 0.219);
+        border-radius: 999em;
+        box-shadow: 0px 0.2em 5px 0px rgba(0, 0, 0, 0.5);
+
+    }
+    nav a:first-child:hover{
+        margin-left: 1em;
+    }
+    nav a:last-child:hover{
+        margin-right: 1em;
     }
 }
