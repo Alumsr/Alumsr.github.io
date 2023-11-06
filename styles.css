@@ -62,7 +62,6 @@ nav img, .slash, .navText{
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    border: 1px dashed rgb(255, 255, 255);
 }
 .content{
     text-align: left;
@@ -87,6 +86,8 @@ nav img, .slash, .navText{
     margin:2em;
     background-color: rgba(0, 119, 255, 0.171);
     display: inline-block;
+    position:relative;
+    left: 10vw;
     max-width: 600px;
     transition: all 200ms ease;
     border-radius: 999em;
@@ -156,12 +157,13 @@ nav img, .slash, .navText{
     .note{
         border: 0px inset #7effff42;
         display: block;
+        left: auto;
     }
     
     
 }
 
-@media (min-width: 768px) {
+@media (min-width: 770px) {
     .slash{
         animation: dimIn 800ms forwards ease;
     }
