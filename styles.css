@@ -42,6 +42,7 @@ nav img, .slash, .navText{
     filter: invert(1);
     opacity: 0.85;
     text-shadow: 0 2px 0px rgb(255, 255, 255);
+    user-select: none;
 }
 
 .out_nav{
@@ -129,20 +130,19 @@ nav img, .slash, .navText{
 @media (max-width: 768px) {
     nav{
         flex-direction: column;
-        align-items: center;
-        position:fixed;
         top:auto;
         right:0%;
         bottom: 10%;
         z-index: 4;
         transform: translateX(50%) translateY(10%) scaleY(80%);
         border-radius: 0.5em;
+        transition: border-radius none;
     }
     nav a{
         margin: 0;
     }
     nav img{
-        transform: translateX(-110%) translateY(5%) scaleY(125%);
+        transform: translateX(-100%) translateY(5%) scaleY(125%);
         opacity: 80%;
     }
 
@@ -169,12 +169,13 @@ nav img, .slash, .navText{
         opacity: 1;
         transform: scale(1.05);
         transition: all 600ms ease;
+        box-shadow: 0px 0px 2px 3px rgb(0, 0, 0);
     }
     nav:not(:hover){
         transition: all 800ms ease;
     }
     nav:active{
-        transform: scale(1.01);
+        transition: all 100ms ease;
     }
     nav a:hover{
         padding: 0.5em 1em;
@@ -188,5 +189,10 @@ nav img, .slash, .navText{
     }
     nav a:last-child:hover{
         margin-right: 1em;
+    }
+    nav a:active{
+        box-shadow: 0px 0px 0.01em 0.01em rgba(0, 0, 0, 1);
+        transition: all 60ms ease;
+        transform: scale(0.95);
     }
 }
