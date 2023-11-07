@@ -1,13 +1,14 @@
 function home(){
-    fetch('home.html')
-        .then(response => response.text())
-        .then(data => {document.body.innerHTML = data;})
-        .catch(error => console.error(error))
+    var body = document.getElementById("main_body");
+    body.innerHTML = "<div class='note'>This is my home.</div>";
 }
 
 function notes(){
-    fetch('notes/note1.html')
-        .then(response => response.text())
-        .then(data => {document.body.innerHTML = data;})
-        .catch(error => console.error(error))
+    var notes = document.getElementById("main_body");
+    notes.innerHTML = "<div class='note'>This is my notes.</div>";
+}
+
+function about(){
+    var about = document.getElementById("main_body");
+    about.innerHTML = "<div class='note'>About me.</div>";
 }
