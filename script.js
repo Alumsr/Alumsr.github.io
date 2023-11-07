@@ -12,3 +12,5 @@ function about(){
     var about = document.getElementById("main_body");
     about.innerHTML = "<div class='note'>About me.</div>";
 }
+
+console.log("JS loaded.");
