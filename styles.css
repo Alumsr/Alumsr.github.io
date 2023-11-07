@@ -1,17 +1,17 @@
 /*文字选中效果*/
 ::selection {
-    background-color: rgba(61, 255, 255, 0.3);
-    border-radius: 0.5em;
+    background-color: rgba(255, 255, 255, 0.33);
+    border-radius: 1em;
 }
   
 
 html{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #fff5e6;
+    color: #ffffff;
 }
 
 body{
-    background-color: rgb(18, 17, 36);
+    background-color: rgb(0, 0, 0);
     margin: 0;
 }
 
@@ -21,33 +21,29 @@ nav{
     justify-content: space-around;
     align-items: center;
     gap: 10px;
-    background-color: rgba(48, 210, 255, 0.306);
-    box-shadow: 0px 2px 3px 2px rgba(0, 61, 57, 0.628);
+    border: 0.15em solid rgba(255, 255, 255);
     position:fixed;
     top:1em;
-    border-radius: 999em;
     z-index: 999;
-    opacity: 0.85;
-
 }
 nav a{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5em 2em;
-    transition: all 400ms ease;
     text-decoration:none;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     font-weight: bolder;
-    border-radius: 0;
     overflow: hidden;
+    transition: all 300ms ease;
+}
+nav a:active{
+    transform: scale(0.92);
 }
 nav img, .slash, .navText{
-    transition: all 500ms ease;
+    transition: all 600ms ease;
     filter: invert(1);
-    opacity: 0.85;
-    text-shadow: 0 1px 0px rgb(255, 255, 255);
     user-select: none;
     -webkit-user-drag: none;
 }
@@ -81,46 +77,57 @@ nav img, .slash, .navText{
     max-width: 800px;
 }
 .content h1{
-    text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.5);
+    text-shadow: 0em 0em 0.01em rgba(255, 255, 255);
     transform: translateX(-1em);
     line-height: normal;
     font-size: 1.5em;
     text-transform: capitalize;
 }
-
 .note{
-    padding: 0.5em 1.5em;
+    opacity: 0;
+    animation: dimIn 500ms ease forwards;
+    transition: all 500ms ease;
+    padding: 1em 2em;
     margin:2em;
-    background-color: rgba(0, 119, 255, 0.171);
     display: inline-block;
     position:relative;
     left: 10vw;
     max-width: 600px;
-    transition: all 200ms ease;
-    border-radius: 999em;
-    box-shadow: none;
-}
-.note:hover{
-    box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
-    transform: scale(1.01);
+    border-radius: 0em;
+    border: 0.1em dashed rgb(255, 255, 255);
 }
 .note:active{
-    box-shadow: none;
-    transform: scale(1);
-    background-color: rgba(0, 36, 144, 0.224);
+    border-radius: 0.5em;
+    border: 0.1em dashed rgb(255, 255, 255);
+
 }
-
-
-
 .slash{
     display: inline-block;
     opacity: 0;
-    animation: dimIn 100ms forwards ease;
+    animation: dimIn 50ms forwards ease;
 }
 
 @keyframes dimIn {
     to{
         opacity: 100%;
+    }
+}
+
+@keyframes slideDown {
+    from{
+        transform: translateY(-4em);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from{
+        transform: translateX(7rem);
+    }
+    to{
+        transform: translateX(0);
     }
 }
 
@@ -141,67 +148,79 @@ nav img, .slash, .navText{
         top:auto;
         right:0%;
         bottom: 10%;
-        z-index: 4;
         transform: translateX(50%) translateY(10%) scaleY(80%);
-        border-radius: 0.5em;
-        transition: border-radius none;
-    }
-    nav a{
-        margin: 0;
     }
     nav img{
         transform: translateX(-100%) translateY(5%) scaleY(125%);
-        opacity: 80%;
     }
-
+    nav a{
+        transition: none;
+    }
     .slash, .navText{
         display: none;
     }
     .out_nav{
         position: absolute;
     }
-
     .note{
-        border: 0px inset #7effff42;
         display: block;
         left: auto;
     }
-    
-    
+    .active{
+        background-color:azure;
+    }
+    nav a.active img{
+        filter: invert(0);
+    }
 }
 
 @media (min-width: 770px) {
     .slash{
         animation: dimIn 800ms forwards ease;
     }
+    nav{
+        animation: slideDown 600ms ease;
+        border-radius: 999em;
+    }
     nav:hover{
-        opacity: 1;
+        background-color: black;
         transform: scale(1.05);
         transition: all 600ms ease;
-        box-shadow: 0px 0px 2px 3px rgb(0, 0, 0);
     }
     nav:not(:hover){
         transition: all 800ms ease;
     }
-    nav:active{
-        transition: all 100ms ease;
-    }
     nav a:hover{
         padding: 0.5em 1em;
-        background-color: rgba(0, 255, 255, 0.219);
+        background-color: rgb(255, 255, 255);
         border-radius: 999em;
-        box-shadow: 0px 0.2em 5px 0px rgba(0, 0, 0, 0.5);
+    }
+    
+    .active{
+        background-color:azure;
+        border-radius: 999em;
+    }
+    nav a:hover .navText{
+        color: rgb(255, 255, 255);
+        transform: translateX(0.8em);
+    }
+    nav a:hover .slash{
+        transform: scale(0) translateX(1em);
+    }
+    nav a:hover img{
+        opacity: 0;
+        transform: translateX(0.8em);
+    }
 
+    nav a:not(:hover).active .navText{
+        color: rgb(255, 255, 255);
+        transform: translateX(0.8em);
     }
-    nav a:first-child:hover{
-        margin-left: 1em;
+    nav a:not(:hover).active img{
+        opacity: 0;
+        transform: translateX(0.8em);
     }
-    nav a:last-child:hover{
-        margin-right: 1em;
-    }
-    nav a:active{
-        box-shadow: 0px 0px 0.01em 0.01em rgba(0, 0, 0, 1);
-        transition: all 60ms ease;
-        transform: scale(0.95);
-    }
+    nav a:not(:hover).active .slash{
+        transform: scale(0) translateX(1em);
 }
+
