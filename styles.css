@@ -84,7 +84,6 @@ nav img, .slash, .navText{
     text-transform: capitalize;
 }
 .note{
-    opacity: 0;
     animation: dimIn 500ms ease forwards;
     transition: all 500ms ease;
     padding: 1em 2em;
@@ -103,16 +102,79 @@ nav img, .slash, .navText{
 }
 .slash{
     display: inline-block;
-    opacity: 0;
     animation: dimIn 50ms forwards ease;
 }
 
+/* .out-loading{
+    border-radius: 100%;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    bottom: 1em;
+    left: 1em;
+    animation: slideLeft 800ms 1200ms ease-in-out forwards;
+} */
+/* .loading{
+    border: 0.5em dashed;
+    border-radius: 100%;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    bottom: 1em;
+    left: 1em;
+    animation: rotate-center 800ms ease-in-out infinite,dimIn 600ms ease;
+} */
+
+/* .backBtn{
+    height: 20em;
+    width: 20em;
+    transform: scale(0.1);
+    display:flex;
+    border: #ffffff solid 2.3em;
+    border-radius: 999em;
+    transition: all 250ms ease;
+}
+.arrow{
+    transform: scale(4) translateX(-1.6em) translateY(1.25em);
+}
+.leftArrow{
+    overflow: hidden;
+    position: fixed;
+    right: -4.3em;
+    bottom: 10em;
+    border-style: solid;
+    border-width: 20px 30px 20px 0px;
+    border-color: transparent #ffffff transparent transparent;
+}
+.minus{
+    overflow: hidden;
+    position: fixed;
+    right: -5.42em;
+    bottom: 10.9em;
+    border-style: solid;
+    border-width: 0.33em 1em 0.33em 1em;
+    border-color: #ffffff;
+    width: 0em;
+    height: 0em;
+} 
+*/
+
 @keyframes dimIn {
+    from{
+        opacity: 0;
+    }
     to{
         opacity: 100%;
     }
 }
-
+@keyframes dimOut {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
 @keyframes slideDown {
     from{
         transform: translateY(-4em);
@@ -124,12 +186,23 @@ nav img, .slash, .navText{
 
 @keyframes slideLeft {
     from{
-        transform: translateX(7rem);
-    }
-    to{
         transform: translateX(0);
     }
+    to{
+        transform: translateX(-4em);
+    }
 }
+ @keyframes rotate-center {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+
 
 @font-face {
     font-family: "coca";
@@ -172,11 +245,16 @@ nav img, .slash, .navText{
     nav a.active img{
         filter: invert(0);
     }
+    /* .backBtn{
+        position:fixed;
+        bottom: -10.5em;
+        right:-10.8em;
+    } */
 }
 
 @media (min-width: 770px) {
     .slash{
-        animation: dimIn 800ms forwards ease;
+        animation: dimIn 1000ms ease;
     }
     nav{
         animation: slideDown 600ms ease;
@@ -222,5 +300,16 @@ nav img, .slash, .navText{
     }
     nav a:not(:hover).active .slash{
         transform: scale(0) translateX(1em);
+    }
+    /* .backBtn{
+        position:fixed;
+        top: -9.8em;
+        left:-10em;
+    }
+    .backBtn:hover{
+        transform: scale(0.11);
+    }
+    .backBtn:active{
+        transform: scale(0.095);
+    } */
 }
-
