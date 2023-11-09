@@ -30,7 +30,7 @@ function loadNote(note){
     .then(data => {
         if (note.endsWith(".md")){
             htmlRes = converter.makeHtml(data);
-            page.innerHTML = '<div class="content_box"><div class="note">'+note.slice(0,-3)+'</div><div class="content">'+htmlRes+'</div></div>';
+            page.innerHTML = '<div class="note">'+note.slice(0,-3)+'</div><div class="content">'+htmlRes+'</div>';
             pageStack.push(crtPage);
             crtPage = note;
         }
