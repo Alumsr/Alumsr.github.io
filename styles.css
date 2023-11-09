@@ -65,40 +65,26 @@ nav img, .slash, .navText{
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    padding-bottom: 6em;
+    padding-bottom: 20vh;
 }
 .content{
-    text-align: left;
-    padding: 0 5em;
-    margin-top: 2em;
-    line-height: 2em;
-    word-spacing: 0.1em;
+    transition: all 400ms ease;
+    margin: 3vh 15vw;
+    animation: dimIn 300ms ease;
+    line-height: 1.6em;
+    word-spacing: 0.15em;
     letter-spacing: 0.08em;
-    text-wrap:pretty;
-    max-width: 800px;
-}
-.content h1{
-    text-shadow: 0em 0em 0.01em rgba(255, 255, 255);
-    transform: translateX(-1em);
-    line-height: normal;
-    font-size: 1.5em;
-    text-transform: capitalize;
 }
 .note{
-    animation: dimIn 500ms ease forwards;
+    animation: dimIn 200ms ease;
     transition: all 400ms ease;
+    line-height: 1.5em;
     position: sticky;
-    margin: 5em 12vw 0em 12vw;
+    margin: 15vh 12vw 0vh 12vw;
     padding: 1em 1.5em;
-    max-width: 600px;
-    border: 0.1em solid rgb(255, 255, 255);
-    font-style: italic;
-}
-.note:hover{
-    border: 0.1em solid rgb(255, 255, 255,0.6);
-}
-.note:active{
-    border: 0.1em solid rgb(255, 255, 255,0.35);
+    max-width: 700px;
+    border-bottom: 0.1em solid rgb(255, 255, 255);
+    font-weight: bolder;
 }
 .slash{
     display: inline-block;
@@ -115,11 +101,6 @@ nav img, .slash, .navText{
     transition: all 250ms ease;
     padding: 0.2em 1em;
     user-select: none;
-}
-.noteBtn:hover{
-    border-bottom: #ffffff solid 0.01em;
-    box-shadow: 0em 1em 0em 0.5em rgba(255, 255, 255) inset;
-    color: black;
 }
 
 /* .out-loading{
@@ -179,17 +160,21 @@ nav img, .slash, .navText{
 @keyframes dimIn {
     from{
         opacity: 0;
+        transform: scale(0.9);
     }
     to{
         opacity: 100%;
+        transform: scale(1);
     }
 }
 @keyframes dimOut {
     from{
         opacity: 1;
+        transform: scale(1);
     }
     to{
         opacity: 0;
+        transform: scale(0.5);
     }
 }
 @keyframes slideDown {
@@ -246,6 +231,12 @@ nav img, .slash, .navText{
     nav a{
         transition: none;
     }
+    nav a:active{
+        transition: all 200ms ease;
+    }
+    nav a:not(:active){
+        transition: all 200ms ease;
+    }
     .slash, .navText{
         display: none;
     }
@@ -253,10 +244,24 @@ nav img, .slash, .navText{
         position: absolute;
     }
     .active{
-        background-color:azure;
+        background-color:rgb(255, 255, 255);
     }
     nav a.active img{
         filter: invert(0);
+    }
+    .note{
+        margin: 3vh 3vw;
+        font-size: smaller;
+    }
+    .noteBtn:active{
+        border-bottom: #ffffff solid 0.01em;
+        box-shadow: 0em 1em 0em 0.5em rgba(255, 255, 255) inset;
+        color: black;
+        transition: all 200ms ease;
+    }
+    .content{
+        margin: 3vh 6vw;
+        font-size: smaller;
     }
     /* .backBtn{
         position:fixed;
@@ -265,7 +270,7 @@ nav img, .slash, .navText{
     } */
 }
 
-@media (min-width: 770px) {
+@media (min-width: 768px) {
     .slash{
         animation: dimIn 1000ms ease;
     }
@@ -313,6 +318,11 @@ nav img, .slash, .navText{
     }
     nav a:not(:hover).active .slash{
         transform: scale(0) translateX(1em);
+    }
+    .noteBtn:hover{
+        border-bottom: #ffffff solid 0.01em;
+        box-shadow: 0em 1em 0em 0.5em rgba(255, 255, 255) inset;
+        color: black;
     }
     /* .backBtn{
         position:fixed;

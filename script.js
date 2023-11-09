@@ -89,7 +89,7 @@ function switchNavbar(navid){
 
 function internalServerError(){
     var page = document.getElementById("mybody");
-    page.innerHTML = "<h1 class='content'>:( 500<br>Internal Server Error</h1>";
+    page.innerHTML = "<br><br><h1 class='content'>:( 500<br>Internal Server Error</h1>";
 }
 
 // function backBtn(){
@@ -104,3 +104,5 @@ function internalServerError(){
 //         crtPage = prePage;
 //     }
 // }
+
+
