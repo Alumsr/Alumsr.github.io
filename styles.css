@@ -65,13 +65,14 @@ nav img, .slash, .navText{
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
+    padding-bottom: 6em;
 }
 .content{
     text-align: left;
     padding: 0 5em;
     margin-top: 2em;
-    line-height: 1.8em;
-    word-spacing: 0.25em;
+    line-height: 2em;
+    word-spacing: 0.1em;
     letter-spacing: 0.08em;
     text-wrap:pretty;
     max-width: 800px;
@@ -83,26 +84,38 @@ nav img, .slash, .navText{
     font-size: 1.5em;
     text-transform: capitalize;
 }
+.content p{
+    text-indent: 1em;
+}
+
 .note{
     animation: dimIn 500ms ease forwards;
-    transition: all 500ms ease;
-    padding: 1em 2em;
-    margin:2em;
-    display: inline-block;
-    position:relative;
-    left: 10vw;
+    transition: all 400ms ease;
+    /* padding: 1em 2em;
+    margin:1.5em 3em 0 3em; */
+    position: sticky;
+    margin: 5em 12vw 0em 12vw;
+    padding: 1em 1.5em;
     max-width: 600px;
-    border-radius: 0em;
-    border: 0.1em dashed rgb(255, 255, 255);
+    border: 0.1em solid rgb(255, 255, 255);
+    text-indent: 1em;
+    font-style: italic;
+}
+.note:hover{
+    border: 0.1em solid rgb(255, 255, 255,0.6);
 }
 .note:active{
-    border-radius: 0.5em;
-    border: 0.1em dashed rgb(255, 255, 255);
-
+    border: 0.1em solid rgb(255, 255, 255,0.35);
 }
 .slash{
     display: inline-block;
     animation: dimIn 50ms forwards ease;
+}
+.highlight{
+    border-bottom: #ffffff solid 0.01em;;
+    padding: 0 0.1em;
+    margin: 0 0.1em;
+    text-shadow: 0em 0em 1em 1em rgba(255, 255, 255);
 }
 
 /* .out-loading{
@@ -234,10 +247,6 @@ nav img, .slash, .navText{
     }
     .out_nav{
         position: absolute;
-    }
-    .note{
-        display: block;
-        left: auto;
     }
     .active{
         background-color:azure;
