@@ -22,6 +22,29 @@ function loadPage(path_to_file){
     .catch(error => console.error('Error:', error));
 }
 
+function loadNote(note){
+    var converter = new showdown.Converter();
+    var page = document.getElementById("mybody");
+    fetch("notes/"+note)
+    .then(response => response.text())
+    .then(data => {
+        if (note.endsWith(".md")){
+            htmlRes = converter.makeHtml(data);
+            page.innerHTML = '<div class="content_box"><div class="note">'+note.slice(0,-3)+'</div><div class="content">'+htmlRes+'</div></div>';
+            pageStack.push(crtPage);
+            crtPage = note;
+        }
+        else if (note.endsWith(".html")){
+            htmlRes = data;
+            page.innerHTML = '<h1>'+note.slice(0,-5)+'</h1>'+htmlRes;
+            pageStack.push(crtPage);
+            crtPage = note;
+        }
+        else{internalServerError()}
+    })
+    .catch(error => console.error('Error:', error));
+
+}
 
 function colorInv(parent,inv){
     var children = parent.children;
@@ -61,6 +84,12 @@ function switchNavbar(navid){
     else{
         console.log("Error: Unknown nav bar id");
     }
+}
+
+
+function internalServerError(){
+    var page = document.getElementById("mybody");
+    page.innerHTML = "<h1 class='content'>:( 500<br>Internal Server Error</h1>";
 }
 
 // function backBtn(){

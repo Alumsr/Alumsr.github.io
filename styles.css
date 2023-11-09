@@ -84,21 +84,14 @@ nav img, .slash, .navText{
     font-size: 1.5em;
     text-transform: capitalize;
 }
-.content p{
-    text-indent: 1em;
-}
-
 .note{
     animation: dimIn 500ms ease forwards;
     transition: all 400ms ease;
-    /* padding: 1em 2em;
-    margin:1.5em 3em 0 3em; */
     position: sticky;
     margin: 5em 12vw 0em 12vw;
     padding: 1em 1.5em;
     max-width: 600px;
     border: 0.1em solid rgb(255, 255, 255);
-    text-indent: 1em;
     font-style: italic;
 }
 .note:hover{
@@ -116,6 +109,17 @@ nav img, .slash, .navText{
     padding: 0 0.1em;
     margin: 0 0.1em;
     text-shadow: 0em 0em 1em 1em rgba(255, 255, 255);
+}
+.noteBtn{
+    border-bottom: #ffffff solid 0.01em;
+    transition: all 250ms ease;
+    padding: 0.2em 1em;
+    user-select: none;
+}
+.noteBtn:hover{
+    border-bottom: #ffffff solid 0.01em;
+    box-shadow: 0em 1em 0em 0.5em rgba(255, 255, 255) inset;
+    color: black;
 }
 
 /* .out-loading{
