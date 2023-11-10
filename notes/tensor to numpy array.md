@@ -1,0 +1,1 @@
+my_tensor.detach().numpy()

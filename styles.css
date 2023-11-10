@@ -7,6 +7,7 @@
 
 html{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'coca';
     color: #ffffff;
 }
 
@@ -17,6 +18,7 @@ body{
 
 
 nav{
+    z-index: 100;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -24,7 +26,7 @@ nav{
     border: 0.15em solid rgba(255, 255, 255);
     position:fixed;
     top:1em;
-    z-index: 999;
+    background-color: black;
 }
 nav a{
     display: flex;
@@ -46,6 +48,10 @@ nav img, .slash, .navText{
     filter: invert(1);
     user-select: none;
     -webkit-user-drag: none;
+}
+a[href]{
+    color: rgb(255, 225, 150);
+    text-decoration: none;
 }
 
 .out_nav{
@@ -96,11 +102,27 @@ nav img, .slash, .navText{
     margin: 0 0.1em;
     text-shadow: 0em 0em 1em 1em rgba(255, 255, 255);
 }
+.note_box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-right: 20vw;
+    padding-left: 6vw;
+}
 .noteBtn{
     border-bottom: #ffffff solid 0.01em;
     transition: all 250ms ease;
-    padding: 0.2em 1em;
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin: 1em 0em;
     user-select: none;
+}
+.note_box > *{
+    overflow: hidden;
+    max-width: 100%;
+}
+code{
+    font-family: 'Ubuntu Mono',monospace;
 }
 
 /* .out-loading{
@@ -214,6 +236,11 @@ nav img, .slash, .navText{
 @font-face {
     font-family: "gsht";
     src: url(fonts/sarasa-semibold.ttc);
+}
+
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(fonts/UbuntuMono-Regular.ttf);
 }
 
 

@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"c313a35c3a389038","type":"text","text":"make","x":-373,"y":44,"width":109,"height":50,"color":"4"},
+		{"id":"071e079d8661b3e4","type":"text","text":"CMake","x":-381,"y":-40,"width":125,"height":50,"color":"4"},
+		{"id":"68bb7f11a8a43529","type":"text","text":"g++/gcc","x":-385,"y":130,"width":133,"height":50,"color":"4"},
+		{"id":"1be96f6937f40756","type":"text","text":"compiler,linker,...","x":-443,"y":208,"width":249,"height":54,"color":"4"},
+		{"id":"d02743faf52204bd","type":"text","text":"IDE","x":-364,"y":-120,"width":91,"height":50,"color":"4"},
+		{"id":"410c1b65bfcb226b","type":"text","text":"CMakeList.txt","x":-119,"y":-125,"width":181,"height":60,"color":"3"},
+		{"id":"5aa01d7f5af4373c","type":"text","text":"Makefile","x":-110,"y":-35,"width":163,"height":55,"color":"3"},
+		{"id":"976872dc7d3f5362","type":"text","text":"GCC","x":-78,"y":69,"width":100,"height":50,"color":"1"},
+		{"id":"268b423b218676e1","type":"text","text":"箭头表示调用关系","x":-564,"y":-65,"width":121,"height":115,"color":"2"}
+	],
+	"edges":[
+		{"id":"e1af111bc4f53589","fromNode":"d02743faf52204bd","fromSide":"bottom","toNode":"071e079d8661b3e4","toSide":"top"},
+		{"id":"3b43da4355ea2716","fromNode":"071e079d8661b3e4","fromSide":"bottom","toNode":"c313a35c3a389038","toSide":"top"},
+		{"id":"16dcbdd574b5bb3a","fromNode":"c313a35c3a389038","fromSide":"bottom","toNode":"68bb7f11a8a43529","toSide":"top"},
+		{"id":"d3bc12ea4f1f9d98","fromNode":"68bb7f11a8a43529","fromSide":"bottom","toNode":"1be96f6937f40756","toSide":"top"},
+		{"id":"bfc84567d7b2984b","fromNode":"410c1b65bfcb226b","fromSide":"left","toNode":"071e079d8661b3e4","toSide":"right","toEnd":"none","label":"说明文件"},
+		{"id":"3193f86501de5e7a","fromNode":"5aa01d7f5af4373c","fromSide":"left","toNode":"c313a35c3a389038","toSide":"right","toEnd":"none","label":"说明文件"},
+		{"id":"2ae8efe6f50f303c","fromNode":"976872dc7d3f5362","fromSide":"left","toNode":"68bb7f11a8a43529","toSide":"right","toEnd":"none","label":"组成"},
+		{"id":"2fc5f4de8f625853","fromNode":"976872dc7d3f5362","fromSide":"left","toNode":"1be96f6937f40756","toSide":"right","toEnd":"none","label":"组成"}
+	]
+}

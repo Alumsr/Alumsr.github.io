@@ -23,6 +23,7 @@ function loadPage(path_to_file){
 }
 
 function loadNote(note){
+    scrollToTop();
     var converter = new showdown.Converter();
     var page = document.getElementById("mybody");
     fetch("notes/"+note)
@@ -90,6 +91,14 @@ function switchNavbar(navid){
 function internalServerError(){
     var page = document.getElementById("mybody");
     page.innerHTML = "<br><br><h1 class='content'>:( 500<br>Internal Server Error</h1>";
+}
+
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // 可以选择 "smooth" 实现平滑滚动效果，也可以选择 "auto" 实现直接跳转
+    });
 }
 
 // function backBtn(){

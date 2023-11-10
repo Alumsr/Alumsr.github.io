@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"b62e4274d1977fb1","type":"text","text":"TensorRT\n- cpp库\n- SDK\n- 运行&加速推理","x":-242,"y":-70,"width":202,"height":220,"color":"2"},
+		{"id":"95cda4f87d6e7b01","type":"text","text":"微调获得的权重.pt","x":98,"y":264,"width":122,"height":96,"color":"3"},
+		{"id":"05598d7ec87d13bb","type":"text","text":"main.cpp","x":-405,"y":236,"width":145,"height":50,"color":"1"},
+		{"id":"5ed63cc5673e593a","type":"text","text":"python版\nv5模型","x":-51,"y":186,"width":143,"height":75,"color":"3"},
+		{"id":"f5a455d462ee8a92","type":"text","text":"TensorRT版\nv5模型","x":-242,"y":279,"width":162,"height":81,"color":"3"},
+		{"id":"c5dd9de50ca4fbbe","type":"text","text":".wts权重文件","x":-103,"y":388,"width":194,"height":53,"color":"3"},
+		{"id":"045d25cce370a308","type":"text","text":"cv库","x":-385,"y":396,"width":105,"height":55,"color":"2"},
+		{"id":"02ddb56635a9e731","type":"text","text":"其他依赖项\n- cuda\n- cudann","x":320,"y":-70,"width":157,"height":128,"color":"2"},
+		{"id":"811c31ca3da7fd4c","type":"text","text":"个人PC\nPytorch+YOLOv5","x":300,"y":190,"width":198,"height":71,"color":"1"},
+		{"id":"aaff1d500d71ea6b","type":"text","text":"LibTorch\n- cpp库\n- pytorch API for C++\n- 调用pytorch","x":-585,"y":-70,"width":200,"height":220,"color":"2"},
+		{"id":"221cca4e734589a1","type":"text","text":"TensorRTX\n- 转换.pt为.wtx\n- 含yolo模型的TensorRT版","x":-6,"y":20,"width":300,"height":130,"color":"2"},
+		{"id":"4473d010ae12fd47","x":-436,"y":486,"width":208,"height":87,"color":"2","type":"text","text":"串口通信库(ROS/SerialPort)"},
+		{"id":"8b64369ef01e6cd1","x":21,"y":502,"width":129,"height":55,"color":"1","type":"text","text":"STM32"}
+	],
+	"edges":[
+		{"id":"401fa4c51e70c2eb","fromNode":"221cca4e734589a1","fromSide":"bottom","toNode":"95cda4f87d6e7b01","toSide":"top","label":"转换"},
+		{"id":"2659c260b849e135","fromNode":"221cca4e734589a1","fromSide":"bottom","toNode":"5ed63cc5673e593a","toSide":"right","label":"转换"},
+		{"id":"af26028e849dd566","fromNode":"811c31ca3da7fd4c","fromSide":"left","toNode":"95cda4f87d6e7b01","toSide":"right","label":"训练"},
+		{"id":"16991b566a33825b","fromNode":"221cca4e734589a1","fromSide":"top","toNode":"b62e4274d1977fb1","toSide":"top","label":"依赖"},
+		{"id":"796f62a1ab5d585c","fromNode":"b62e4274d1977fb1","fromSide":"bottom","toNode":"05598d7ec87d13bb","toSide":"top","label":"调用模型"},
+		{"id":"5009832639538778","fromNode":"045d25cce370a308","fromSide":"top","toNode":"05598d7ec87d13bb","toSide":"bottom","label":"调用摄像头"},
+		{"id":"2b6da96460061661","fromNode":"c5dd9de50ca4fbbe","fromSide":"left","toNode":"f5a455d462ee8a92","toSide":"bottom"},
+		{"id":"626540820a3543c2","fromNode":"5ed63cc5673e593a","fromSide":"left","toNode":"f5a455d462ee8a92","toSide":"right"},
+		{"id":"c2dbaf753a62d9e3","fromNode":"b62e4274d1977fb1","fromSide":"bottom","toNode":"f5a455d462ee8a92","toSide":"top","label":"运行"},
+		{"id":"a25f8b1f8fc2f366","fromNode":"95cda4f87d6e7b01","fromSide":"left","toNode":"5ed63cc5673e593a","toSide":"bottom"},
+		{"id":"6f35b03885497f81","fromNode":"95cda4f87d6e7b01","fromSide":"bottom","toNode":"c5dd9de50ca4fbbe","toSide":"right"},
+		{"id":"7d83309b64a3acdf","fromNode":"4473d010ae12fd47","fromSide":"right","toNode":"8b64369ef01e6cd1","toSide":"left","label":"COM口通信传输"},
+		{"id":"e5915918f8a77203","fromNode":"05598d7ec87d13bb","fromSide":"left","toNode":"4473d010ae12fd47","toSide":"left","label":"输出位置+宽高"}
+	]
+}
