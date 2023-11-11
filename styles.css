@@ -7,7 +7,6 @@
 
 html{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-family: 'coca';
     color: #ffffff;
 }
 
@@ -39,6 +38,7 @@ nav a{
     font-weight: bolder;
     overflow: hidden;
     transition: all 300ms ease;
+    transform: scale(1.05);
 }
 nav a:active{
     transform: scale(0.92);
@@ -71,7 +71,7 @@ a[href]{
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    padding-bottom: 20vh;
+    padding-bottom: 50vh;
 }
 .content{
     transition: all 400ms ease;

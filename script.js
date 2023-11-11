@@ -23,7 +23,6 @@ function loadPage(path_to_file){
 }
 
 function loadNote(note){
-    scrollToTop();
     var converter = new showdown.Converter();
     var page = document.getElementById("mybody");
     fetch("notes/"+note)
@@ -44,6 +43,7 @@ function loadNote(note){
         else{internalServerError()}
     })
     .catch(error => console.error('Error:', error));
+    scrollToTop();
 
 }
 
@@ -97,7 +97,7 @@ function internalServerError(){
 function scrollToTop() {
     window.scrollTo({
         top: 0,
-        behavior: "smooth" // 可以选择 "smooth" 实现平滑滚动效果，也可以选择 "auto" 实现直接跳转
+        behavior: "auto" // 可以选择 "smooth" 实现平滑滚动效果，也可以选择 "auto" 实现直接跳转
     });
 }
 
