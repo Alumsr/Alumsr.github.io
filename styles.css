@@ -8,6 +8,7 @@
 html{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #ffffff;
+    background-color: black;
 }
 
 body{
@@ -66,13 +67,6 @@ a[href]{
 .navText{
     display: inline-block;
 }
-.content_box{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding-bottom: 50vh;
-}
 .content{
     transition: all 400ms ease;
     margin: 3vh 15vw;
@@ -85,7 +79,6 @@ a[href]{
     animation: dimIn 200ms ease;
     transition: all 400ms ease;
     line-height: 1.5em;
-    position: sticky;
     margin: 15vh 12vw 0vh 12vw;
     padding: 1em 1.5em;
     max-width: 700px;
@@ -105,21 +98,19 @@ a[href]{
 .note_box{
     display: flex;
     flex-direction: column;
+    align-items: left;
     flex-wrap: nowrap;
-    padding-right: 20vw;
-    padding-left: 6vw;
+    padding:8vh 12vw ;
+    margin-right: 18vw;
+    margin-left: 5vw;
 }
 .noteBtn{
     border-bottom: #ffffff solid 0.01em;
     transition: all 250ms ease;
-    display: inline-block;
-    padding: 0.2em 0.5em;
+    display: list-item;
+    padding: 0.2em 0.2em;
     margin: 1em 0em;
     user-select: none;
-}
-.note_box > *{
-    overflow: hidden;
-    max-width: 100%;
 }
 code{
     font-family: 'Ubuntu Mono',monospace;
@@ -281,10 +272,9 @@ code{
         font-size: smaller;
     }
     .noteBtn:active{
-        border-bottom: #ffffff solid 0.01em;
-        box-shadow: 0em 1em 0em 0.5em rgba(255, 255, 255) inset;
-        color: black;
-        transition: all 200ms ease;
+        border: #ffffff solid 0.01em;
+        border-radius: 0.1em;
+        transition: all 200ms ease-in-out;
     }
     .content{
         margin: 3vh 6vw;
@@ -348,7 +338,7 @@ code{
     }
     .noteBtn:hover{
         border-bottom: #ffffff solid 0.01em;
-        box-shadow: 0em 1em 0em 0.5em rgba(255, 255, 255) inset;
+        box-shadow: 0 -2em 0 0 rgba(255, 255, 255) inset;
         color: black;
     }
     /* .backBtn{
